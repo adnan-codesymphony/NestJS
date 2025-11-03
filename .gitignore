@@ -1,0 +1,43 @@
+# Node modules
+node_modules
+.pnpm-store
+
+# Build artifacts
+dist
+build
+coverage
+.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Editor/IDE specific
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Nest CLI specific
+.nest-cli.json
+
+# Test files
+*.spec.ts
+*.e2e-spec.ts
+
+# Other
+temp/
+tmp/
