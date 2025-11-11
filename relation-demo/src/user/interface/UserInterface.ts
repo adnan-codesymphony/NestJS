@@ -1,3 +1,5 @@
+import { EmployeeInterface } from './EmployeeInterface';
+
 export interface UserInterface {
   fullname: string;
   email: string;
@@ -5,7 +7,5 @@ export interface UserInterface {
   gender: string;
   age: number;
   address: string;
-  designation: string;
-  department: string;
-  salary: number;
+  employees: EmployeeInterface[];
 }

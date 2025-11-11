@@ -1,10 +1,10 @@
-import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './user.entity';
 import { DataSource, EntityManager, Repository } from 'typeorm';
 import { UserInterface } from './interface/UserInterface';
 import { PersonalDetails } from '../personal-details/personal-details.entity';
 import { Employee } from '../employee/employee.entity';
+import { HttpStatus, Injectable } from '@nestjs/common';
 
 @Injectable()
 export class UserService {
@@ -35,12 +35,24 @@ export class UserService {
         user: savedUser,
       });
 
-      await manager.save(Employee, {
-        designation: userDetails.designation,
-        department: userDetails.department,
-        salary: userDetails.salary,
-        user: savedUser,
-      });
+      for (const empDetail of userDetails.employees) {
+        await manager.save(Employee, {
+          designation: empDetail.designation,
+          department: empDetail.department,
+          salary: empDetail.salary,
+          user: savedUser,
+        });
+      }
+      if (HttpStatus.CREATED) {
+        return 'Records Inserted Successfully';
+      }
     });
   }
 }
+
+// await manager.save(Employee, {
+//         designation: userDetails.designation,
+//         department: userDetails.department,
+//         salary: userDetails.salary,
+//         user: savedUser,
+//       });
