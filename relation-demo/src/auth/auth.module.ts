@@ -4,12 +4,14 @@ import { AuthService } from './auth.service';
 import { User } from '../user/user.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { JwtModule } from '@nestjs/jwt';
+import { jwtConstants } from './constants';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([User]),
     JwtModule.register({
-      secret: 'SecretKey',
+      global: true,
+      secret: jwtConstants.secret,
       signOptions: { expiresIn: '60s' },
     }),
   ],
