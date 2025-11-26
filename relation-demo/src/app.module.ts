@@ -1,27 +1,29 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { EmployeeModule } from './employee/employee.module';
 import { UserModule } from './user/user.module';
+import { PersonalDetailsModule } from './personal-details/personal-details.module';
+import { EmployeeModule } from './employee/employee.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ProductModule } from './product/product.module';
-import { Product } from './product/product.entity';
+import { User } from './user/user.entity';
+import { PersonalDetails } from './personal-details/personal-details.entity';
+import { Employee } from './employee/employee.entity';
 
 @Module({
   imports: [
-    EmployeeModule,
     UserModule,
+    PersonalDetailsModule,
+    EmployeeModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
       port: 3306,
       username: 'root',
       password: '',
-      database: 'mydb',
-      entities: [Product],
+      database: 'nestjs-relation',
+      entities: [User, PersonalDetails, Employee],
       synchronize: true,
     }),
-    ProductModule,
   ],
   controllers: [AppController],
   providers: [AppService],
