@@ -2,8 +2,11 @@ import './App.css'
 import ClassComponent from './components/ClassComponent'
 import FunctionalComponent from './components/FunctionalComponent'
 import FunctionalLifeCycle from './components/FunctionalLifeCycle'
+import HideShow from './components/HideShow'
 import LifeCycleExample from './components/LifeCycleExample'
 import Profile from './components/Profile'
+import TabbingSystem from './components/TabbingSystem'
+import ToDoList from './components/ToDoList'
 import Users from './components/Users'
 
 function App() {
@@ -30,11 +33,16 @@ function App() {
   return (
     <>
       <div>
-          <h1>Welcome to React.js</h1>
+          {/* <h1 className='text-[40px] text-red-700 font-bold'>Welcome to React.js</h1> */}
 
-          <Users />      
+          
+          <TabbingSystem />
 
           {/* 
+          
+          <ToDoList />
+          <HideShow />
+          <Users />
           <FunctionalLifeCycle />
           <LifeCycleExample />
           <ClassComponent />
