@@ -67,7 +67,14 @@ export class AuthService {
       email: currentUser.email,
     };
 
+    const currUser = {
+      id: currentUser.id,
+      fullname: currentUser.fullname,
+      email: currentUser.email,
+    };
+
     return {
+      currUser,
       access_token: await this.jwtService.signAsync(payload),
     };
   }
