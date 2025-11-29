@@ -1,3 +1,4 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import ClassComponent from './components/ClassComponent'
 import FunctionalComponent from './components/FunctionalComponent'
@@ -8,6 +9,13 @@ import Profile from './components/Profile'
 import TabbingSystem from './components/TabbingSystem'
 import ToDoList from './components/ToDoList'
 import Users from './components/Users'
+import Home from './components/Home'
+import About from './components/About'
+import Contact from './components/Contact'
+import Header from './components/Header'
+import Register from './components/Register_Login/Register'
+import Login from './components/Register_Login/Login'
+import Dashboard from './components/Register_Login/Dashboard'
 
 function App() {
 
@@ -35,11 +43,24 @@ function App() {
       <div>
           {/* <h1 className='text-[40px] text-red-700 font-bold'>Welcome to React.js</h1> */}
 
+
+          <BrowserRouter>
+
+              <Routes>
+                  <Route path='/' element={<Home />}/>
+                  <Route path='/about' element={<About />}/>
+                  <Route path='/contact' element={<Contact />}/>
+                  <Route path='/register' element={<Register />}/>
+                  <Route path='/login' element={<Login />}/>
+                  <Route path='/dashboard' element={<Dashboard />}/>
+              </Routes>
+
+          </BrowserRouter>
           
-          <TabbingSystem />
 
           {/* 
           
+          <TabbingSystem />
           <ToDoList />
           <HideShow />
           <Users />
@@ -48,7 +69,8 @@ function App() {
           <ClassComponent />
           <FunctionalComponent />
           <Profile users={users} />
-           */}
+          
+          */}
       </div>
     </>
   )
