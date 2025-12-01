@@ -16,6 +16,8 @@ import Header from './components/Header'
 import Register from './components/Register_Login/Register'
 import Login from './components/Register_Login/Login'
 import Dashboard from './components/Register_Login/Dashboard'
+import PasswordGenerator from './components/PasswordGenerator'
+import Ecommerce from './components/E-commerce'
 
 function App() {
 
@@ -53,6 +55,8 @@ function App() {
                   <Route path='/register' element={<Register />}/>
                   <Route path='/login' element={<Login />}/>
                   <Route path='/dashboard' element={<Dashboard />}/>
+                  <Route path='/pass_gen' element={<PasswordGenerator />}/>
+                  <Route path='/ecommerce' element={<Ecommerce />}/>
               </Routes>
 
           </BrowserRouter>
