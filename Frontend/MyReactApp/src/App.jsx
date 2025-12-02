@@ -18,6 +18,9 @@ import Login from './components/Register_Login/Login'
 import Dashboard from './components/Register_Login/Dashboard'
 import PasswordGenerator from './components/PasswordGenerator'
 import Ecommerce from './components/E-commerce'
+import Component1 from './components/UseContextExample/Component1'
+import CountExample from './components/UseRefExample/CountExample'
+import DOMManipulation from './components/UseRefExample/DOMManipulation'
 
 function App() {
 
@@ -45,6 +48,7 @@ function App() {
       <div>
           {/* <h1 className='text-[40px] text-red-700 font-bold'>Welcome to React.js</h1> */}
 
+        
 
           <BrowserRouter>
 
@@ -57,6 +61,9 @@ function App() {
                   <Route path='/dashboard' element={<Dashboard />}/>
                   <Route path='/pass_gen' element={<PasswordGenerator />}/>
                   <Route path='/ecommerce' element={<Ecommerce />}/>
+                  <Route path='/use_context_example' element={<Component1 />}/>
+                  <Route path='/use_ref_example' element={<CountExample />}/>
+                  <Route path='/use_ref_example2' element={<DOMManipulation />}/>
               </Routes>
 
           </BrowserRouter>
